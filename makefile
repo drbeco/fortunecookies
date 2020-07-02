@@ -31,6 +31,10 @@
 #
 # * From linux prompt, to create the index of the cookie text file:
 #        $ make cookies
+# * To install:
+#        $ make install
+# * To uninstall:
+#        $ make uninstall
 
 # Phonies
 .PHONY: cookie
@@ -45,6 +49,14 @@ cookies : chesscookies.dat
 
 %.dat : %
 	strfile $^ $@
+
+install : chesscookies chesscookies.dat
+	cp chesscookies /usr/share/games/fortunes
+	cp chesscookies.dat /usr/share/games/fortunes
+
+uninstall : 
+	rm /usr/share/games/fortunes/chesscookies
+	rm /usr/share/games/fortunes/chesscookies.dat
 
 nomatch :
 	@echo 'makefile error: no rules for the given goal(s)' $(warning nomatch)
