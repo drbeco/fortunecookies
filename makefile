@@ -37,7 +37,7 @@
 #        $ make uninstall
 
 # Phonies
-.PHONY: cookie
+.PHONY: cookies
 # version major number
 MAJOR ?= 1
 # version minor number
@@ -50,13 +50,17 @@ cookies : *_cookies.dat
 %_cookies.dat : %_cookies
 	strfile $^ $@
 
-install : chesscookies chesscookies.dat
-	cp chesscookies /usr/share/games/fortunes
-	cp chesscookies.dat /usr/share/games/fortunes
+install : chess_cookies chess_cookies.dat
+	cp chess_cookies /usr/share/games/fortunes
+	cp chess_cookies.dat /usr/share/games/fortunes
+	cp motivational_cookies /usr/share/games/fortunes
+	cp motivational_cookies.dat /usr/share/games/fortunes
 
 uninstall : 
-	rm /usr/share/games/fortunes/chesscookies
-	rm /usr/share/games/fortunes/chesscookies.dat
+	rm /usr/share/games/fortunes/chess_cookies
+	rm /usr/share/games/fortunes/chess_cookies.dat
+	rm /usr/share/games/fortunes/motivational_cookies
+	rm /usr/share/games/fortunes/motivational_cookies.dat
 
 nomatch :
 	@echo 'makefile error: no rules for the given goal(s)' $(warning nomatch)
