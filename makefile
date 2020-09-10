@@ -45,9 +45,9 @@ MINOR ?= 0
 # object files to compile with the source
 
 # Creates the index for a fortune cookie
-cookies : chesscookies.dat
+cookies : *_cookies.dat
 
-%.dat : %
+%_cookies.dat : %_cookies
 	strfile $^ $@
 
 install : chesscookies chesscookies.dat
