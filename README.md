@@ -36,6 +36,10 @@ To uninstall, just type:
 
 or you can also safely manually remove the pair of files you want (`theme_cookies` and `theme_cookies.dat`).
 
+# Manually generated
+
+* strfile theme_cookies theme_cookies.dat
+
 # Author
 
 * by Dr. Ruben Carlo Benante

@@ -51,16 +51,26 @@ cookies : *_cookies.dat
 	strfile $^ $@
 
 install : chess_cookies chess_cookies.dat
+	# Chess
 	cp chess_cookies /usr/share/games/fortunes
 	cp chess_cookies.dat /usr/share/games/fortunes
+	# Motivational
 	cp motivational_cookies /usr/share/games/fortunes
 	cp motivational_cookies.dat /usr/share/games/fortunes
+	# Photo
+	cp photo_cookies /usr/share/games/fortunes
+	cp photo_cookies.dat /usr/share/games/fortunes
 
 uninstall : 
+	# Chess
 	rm /usr/share/games/fortunes/chess_cookies
 	rm /usr/share/games/fortunes/chess_cookies.dat
+	# Motivational
 	rm /usr/share/games/fortunes/motivational_cookies
 	rm /usr/share/games/fortunes/motivational_cookies.dat
+	# Photo
+	rm /usr/share/games/fortunes/photo_cookies
+	rm /usr/share/games/fortunes/photo_cookies.dat
 
 nomatch :
 	@echo 'makefile error: no rules for the given goal(s)' $(warning nomatch)
